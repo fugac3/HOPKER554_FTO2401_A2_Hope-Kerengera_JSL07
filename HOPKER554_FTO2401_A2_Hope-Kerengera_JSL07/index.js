@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('modal');
     const certificateContent = document.getElementById('certificateContent');
     const closeModal = document.querySelector('.close');
+    const modalContent = document.getElementsByClassName('modal-content'); //added
   
     // Hide the modal initially
     modal.style.display = 'none';
@@ -12,25 +13,34 @@ document.addEventListener('DOMContentLoaded', function () {
   
       // 🚨 Get input values
       const studentNameInput = document.getElementById('studentName');
-      const personalMessageInput = ;
-      const courseNameInput = ; 
+      const personalMessageInput = document.getElementById('personalMessage');
+      const courseNameInput = document.getElementById('courseName'); 
   
       const studentName = studentNameInput.value;
       const personalMessage = personalMessageInput.value;
-      const courseName = courseNameInput ? courseNameInput.value : "a course"; // Fallback to "a course" if no input
+      const courseName = courseNameInput ? courseNameInput.value : "a course"; // ternary operator. Fallback to "a course" if no input
   
-      if (studentName.trim() === '' || personalMessage.trim() === '') {
-        alert('Please fill in all fields');
+      //if the strings/imput fields are empty
+      if (studentName.trim() === '' || personalMessage.trim() === '') { //trim, removes space from beginnining and end of string, so if space still left over, it's empty
+        alert('Please fill in all fields'); 
         return;
       }
   
       // 🚨 Generate certificate content dynamically
-      certificateContent. = `
+      certificateContent.innerHTML = 
+      `<h1>Certificate of Achievement</h1>
+      <p>This is to certify that</p>
       <h3>${studentName}</h3>
-    `;
+      <p>has almost completed the</p>
+      <h4>${courseName}</h4>
+      <p>with legendary perseverance and world-class bad-assery for never giving up</p>
+      <img src="logo.png">
+      <p>${personalMessage}</p>`
+    ;
     
       //  Display the modal
       modal.style.display = 'block';
+      modalContent.appendChild(certificateContent);
   
       // Clear the form inputs
       studentNameInput.value = '';
@@ -39,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     //  🚨 Close the modal when the close button is clicked
-    closeModal.('', function () {
-      
+    closeModal.addEventListener('click', function () {
+      modal.style.display = 'none';      
     });
   });
   

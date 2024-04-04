@@ -6,6 +6,12 @@ body {
   padding: 0;
 }
 
+img {
+  width: 20em;
+  height: auto;
+  object-fit: contain;
+}
+
 h1 {
   color: #333;
 }
@@ -43,8 +49,9 @@ button:hover {
 
 .modal {
     max-width: 800px;
+    height: 100vh; /*make content fit*/
     margin: 0 auto; /* Center horizontally */
-    position: fixed;
+    position:fixed;
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center both vertically and horizontally */
