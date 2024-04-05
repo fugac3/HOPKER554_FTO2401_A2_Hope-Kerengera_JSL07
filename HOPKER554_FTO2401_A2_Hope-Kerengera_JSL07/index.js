@@ -32,14 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
       <p>This is to certify that</p>
       <h3>${studentName}</h3>
       <p>has almost completed the</p>
-      <h4>${courseName}</h4>
-      <p>with legendary perseverance and world-class bad-assery for never giving up</p>
+      <h3>${courseName}</h3>
+      <p>with legendary perseverance and world-class bad-assery for never giving up🏆</p>
       <img src="logo.png">
       <p>${personalMessage}</p>`
     ;
     
       //  Display the modal
-      modal.style.display = 'block';
+      modal.style.display = 'block';trop
       modalContent.appendChild(certificateContent);
   
       // Clear the form inputs

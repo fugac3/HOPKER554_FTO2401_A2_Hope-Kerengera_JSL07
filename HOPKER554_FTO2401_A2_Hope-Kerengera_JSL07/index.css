@@ -1,15 +1,14 @@
 body {
-    font-family: 'Raleway', serif;
+  font-family: 'Raleway', serif;
   text-align: center;
-  background-color: #f0f0f0;
+  background-color: #F0F3F2;
   margin: 0;
   padding: 0;
 }
 
 img {
-  width: 20em;
-  height: auto;
-  object-fit: contain;
+  width: 40%;
+  /*40% of container width*/
 }
 
 h1 {
@@ -17,6 +16,13 @@ h1 {
 }
 
 #cardForm {
+  display: flex;
+  justify-content: center;
+  /*center horizontally*/
+  align-items: center;
+  /*center vertically*/
+  flex-direction: column;
+  /*put items in column*/
   margin: 20px auto;
   max-width: 400px;
   padding: 20px;
@@ -25,10 +31,18 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-label,
-input {
+label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #5d5f5e;
   display: block;
   margin-bottom: 10px;
+}
+
+input {
+  margin-bottom: 20px;
+  /*create more space below*/
+  width: 50%;
+  color: #5d5f5e;
 }
 
 button {
@@ -48,30 +62,36 @@ button:hover {
 /* Certificate Modal */
 
 .modal {
-    max-width: 800px;
-    height: 100vh; /*make content fit*/
-    margin: 0 auto; /* Center horizontally */
-    position:fixed;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center both vertically and horizontally */
-    z-index: 1;
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: relative;
-    border: 3px solid #659f8f;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  /* Center horizontally */
+  position: fixed;
+  top: 50%;
+  /* Center vertically */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* Center both vertically and horizontally */
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border: 3px solid #659f8f;
+}
+
 
 .modal-content::before {
   content: "";
   position: absolute;
-  top: -2px; right: -2px; bottom: -2px; left: -2px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
   z-index: -1;
   background: linear-gradient(#659f8f, #5d5f5e);
   border-radius: 15px;
@@ -80,7 +100,10 @@ button:hover {
 .modal-content::after {
   content: "";
   position: absolute;
-  top: -1px; right: -1px; bottom: -1px; left: -1px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
   z-index: -2;
   background: #fff;
   border: 1px solid #dc7f5f;
@@ -88,7 +111,10 @@ button:hover {
 }
 
 #certificateContent {
-  font-family: 'Raleway', serif;
+  font-size: smaller;
+  /*to make certifcate fit*/
+  font-family: "Open Sans", sans-serif;
+  /*added own font*/
   color: #333;
   padding: 20px;
   background-color: #f9f9f9;
@@ -97,12 +123,19 @@ button:hover {
   margin: 20px 0;
 }
 
-h1, .modal-content h2, .modal-content p {
+h1,
+.modal-content h2,
+.modal-content p {
   color: #5d5f5e;
+}
+
+h3 {
+  font-weight: 500;
 }
 
 .close {
   color: #dc7f5f;
+  cursor: pointer;
 }
 
 /* Adding a fancy border to the certificate content */
@@ -117,6 +150,5 @@ button {
 }
 
 button:hover {
-  background-color: #5d5f5e;
+  background-color: #dc7f5f;
 }
-
